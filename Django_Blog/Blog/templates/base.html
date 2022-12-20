@@ -1,0 +1,85 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <title>Python for dummies - Blog</title>
+    <meta name="description" content="A brief description">
+    <meta name="author" content="your Site name">
+
+    <!-- Open Graph Protocol-->
+    
+    <meta property="og:title" content="A brief description">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://www.mysite">
+    <meta property="og:description" content="A description">
+    <meta property="og:image" content="image.png">
+    
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300&display=swap');
+        body h1, h2, p{
+            font-family: 'Hanken Grotesk', sans-serif;
+            font-size: 250%%;
+        }
+    </style>
+    
+    <!-- Include your CSS file here -->
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <!-- <link rel="stylesheet" href="css/styles.css"> -->
+    </head>
+<body>
+    <!--Refresh with CTRL + F5-->
+    <div class="nav">
+        <nav>
+            <!-- Add your website navigation here -->
+            <>
+                <li class="btn">
+                    <a href="{% url 'index' %}">Homepage</a>
+                </li>
+                <li class="btn">
+                    <a href="{% url 'articles:list' %}">Articles</a>
+                </li>
+                <li class="btn">
+                    <a href="{% url 'about' %}">About</a>
+                </li>
+                {% if user.is_authenticated %}
+                <li class="btn">
+                    <a href="{% url 'articles:create' %}">New article</a>
+                </li>
+                <li class="btn">
+                    <form class="logout-link" action="{% url 'accounts:logout' %}" method="post">
+                        {% csrf_token %}
+                        <button type="subtmit">Logout</button>
+                    </form>
+                </li>
+                {% else %}
+                <li class="btn log">
+                    <a href="{% url 'accounts:login' %}">Login</a>
+                    <a href="{% url 'accounts:signup' %}">Signup</a>
+                </li>
+                {% endif %}
+        </nav>
+    </div>
+    <header class='title'>
+        <!-- Add your website name or logo here -->
+        <p>Python for dummies - Blog</p>
+    </header>
+    <main>
+        {% block content %}
+        <!-- Add your main content here -->
+        <h1>Heading</h1>
+        {% endblock %}
+    </main>
+    <br>
+    <footer>
+        <!-- Add copyright notices and other footer content here -->
+        <p>Sebastian Lapalma © 2023 - Argentina</p>
+    </footer>
+</body>
+</html>

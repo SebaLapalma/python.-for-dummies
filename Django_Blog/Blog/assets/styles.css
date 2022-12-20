@@ -1,0 +1,101 @@
+body{
+    background-color:#9acef8;
+    margin-bottom: 100px;
+    clear:both ;
+}
+
+h1, h2{
+    padding: 3px;
+    margin: 3px;
+}
+
+.nav{
+    background-color:#1a4a5a;
+    color:white;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    padding: 10px;
+}
+
+.btn {
+    display: inline;
+}
+.btn a{
+    background-color:cadetblue;
+    text-decoration: none;
+    color: white;
+    border-radius: 3px;
+    padding: 5px;
+    margin: 2px;
+    top: 5px;
+}
+.btn a:hover {
+    color: darkblue;
+    background-color: lightblue;
+}
+.btn a{
+    transition: 0.3s;
+}
+
+header {
+    text-align: center;
+}
+
+footer {
+    background-color: #0e2c40;
+    color: white;
+    width: 100%;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+}
+
+.articles{
+    text-align: center;
+}
+.articles a{
+    text-decoration: none;
+    color: #0e2c40;
+    transition: 0.3s;
+}
+.articles a:hover{
+    color: white;
+}
+
+img{
+    display: block;
+    margin: auto;
+    max-width: fit-content;
+    max-height: fit-content;
+}
+
+.logout-link button{
+    background-color:green;
+    text-decoration: none;
+    color: white;
+    border-radius: 3px;
+    padding: 5px;
+    margin: 5px;
+    position:fixed;
+    transition: 0.3s;
+    display: inline;
+    top: 0;
+    right: 0;
+}
+.logout-link button:hover{
+    background-color: greenyellow;
+    cursor: pointer;
+}
+
+.log a{
+    background-color: green;
+    border-radius: 3px;
+}
+.log a:hover{
+    background-color: greenyellow;
+}
